@@ -15,7 +15,7 @@ router.get('/home',function(req,res){
     res.render('campgrounds/landing')
 })
 router.get('/register', function (req, res) {
-    res.render('auth/register')
+    res.render('auth/register',{page:'register'})
 })
 router.post('/register', function (req, res) {
     var newUser=new User({username: req.body.username })
@@ -36,7 +36,7 @@ router.post('/register', function (req, res) {
     })
 })
 router.get('/login', function (req, res) {
-    res.render('auth/login')
+    res.render('auth/login',{page:'login'})
 })
 router.post('/login', passport.authenticate("local", {
     successRedirect: '/campgrounds',
