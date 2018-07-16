@@ -22,12 +22,13 @@ router.get('/', function (req, res) {
 router.post('/',middleWare.isLoggedIn,function (req, res) {
     var name = req.body.campname
     var image = req.body.campimage
-    var price=req.body.price
+    console.log(req.body.cost +'Cost submitted')
+    var price=req.body.cost
     var description = req.body.campdesc
     var campObj = {
         name: name,
         image: image,
-        price:price,
+        cost:price,
         description: description,
         author:{
             id:req.user._id,
@@ -67,16 +68,18 @@ router.get('/:id/edit',middleWare.checkOwnerCamp,function(req,res){
             req.flash('sucess','An error might have happened')
             res.redirect('/')
         }
-        res.render('campgrounds/edit',{foundCamp:foundCamp})
     })
 })
 router.put('/:id',middleWare.checkOwnerCamp,function(req,res){
     var name = req.body.campname
     var image = req.body.campimage
+    console.log(req.body.cost +'Cost submitted')
+    var cost=req.body.cost
     var description = req.body.campdesc
     var campObj = {
         name: name,
         image: image,
+        cost:cost,
         description: description,
         author:{
             id:req.user._id,
