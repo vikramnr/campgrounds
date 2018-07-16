@@ -1,6 +1,5 @@
 <% include ../partials/header.ejs%>
-    <div class="container">
-        <br>
+    
         <form action="/campgrounds/<%=foundCamp._id%>?_method=PUT" method="POST" role="form">
             <legend>Edit <%=foundCamp.name%></legend>
 
@@ -23,4 +22,4 @@
             <a class="btn btn-default" href="/" role="button">Go Back</a>
             
         </form>
-    </div>
+    

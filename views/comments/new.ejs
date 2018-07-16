@@ -1,16 +1,15 @@
 <% include ../partials/header.ejs%>
-    <div class="container">
-        <br>
-        <form action="/campgrounds/<%= campground._id%>/comments/" method="POST" role="form">
-            <legend>Add New Comment to <%= campground.name%></legend>
+    <form action="/campgrounds/<%= campground._id%>/comments/" method="POST" role="form">
+        <legend>Add New Comment to
+            <%= campground.name%>
+        </legend>
 
-            <div class="form-group">
-                <label for="">Share your thoughts</label>
-                <input type="text" name="comment[text]" class="form-control" id="" placeholder="Just a Little bit">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="">Share your thoughts</label>
+            <input type="text" name="comment[text]" class="form-control" id="" placeholder="Just a Little bit">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
 
-            <a class="btn btn-default" href="/campgrounds/:id" role="button">Go Back</a>
+        <a class="btn btn-default" href="/campgrounds/:id" role="button">Go Back</a>
 
-        </form>
-    </div>
+    </form>
