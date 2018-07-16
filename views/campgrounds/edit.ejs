@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs%>
+    <div class="container">
+        <br>
+        <form action="/campgrounds/<%=foundCamp._id%>?_method=PUT" method="POST" role="form">
+            <legend>Edit <%=foundCamp.name%></legend>
+
+            <div class="form-group">
+                <label for="">Campground Name</label>
+                <input type="text" name="campname"  value="<%=foundCamp.name%>"class="form-control" id="" placeholder="Camp Name">
+                <br>
+                
+                <label for="">Price</label>
+                <input type="number" name="price" class="form-control" id="" value="<%=foundCamp.price>" placeholder="Price" min="0.01" step="0.01">
+
+                <label for="">Campground Image</label>
+                <input type="text" name="campimage" value="<%=foundCamp.image%>" class="form-control" id="" placeholder="Image Url">
+                <br>
+                <label for="">Campground Description</label>
+                <input type="text" name="campdesc" value="<%=foundCamp.description%>" class="form-control" id="" placeholder="Just a Little bit">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Camp</button>
+
+            <a class="btn btn-default" href="/" role="button">Go Back</a>
+            
+        </form>
+    </div>

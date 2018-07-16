@@ -1,0 +1,17 @@
+<% include ../partials/header.ejs%>
+    <div class="container">
+        <br>
+        <form action="/login" method="POST" role="form">
+            <legend>Login</legend>
+
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="username" class="form-control" id="" placeholder="User Name">
+                <br>
+                <label for="">Password</label>
+                <input type="text" name="password" class="form-control" id="" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+
+        </form>
+    </div>
