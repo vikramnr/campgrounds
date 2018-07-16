@@ -1,19 +1,20 @@
 <% include ../partials/header.ejs%>
-    
-        <form action="/register" method="POST" role="form">
-            <legend>Register</legend>
+    <div class="row">
+        <h1 style="text-align: center">Register</h1>
+        <div style="margin: 25px auto;width: 30%">
+            <form action="/register" method="POST" role="form">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" id="" placeholder="User Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="password" class="form-control" id="" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="admincode" class="form-control" id="" placeholder="Admin Code">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
 
-            <div class="form-group">
-                <label for="">Name</label>
-                <input type="text" name="username" class="form-control" id="" placeholder="User Name">
-                <br>
-                <label for="">Password</label>
-                <input type="text" name="password" class="form-control" id="" placeholder="Password">
-                <br>
-                <label for="">Admin Code</label>
-                <input type="text" name="admincode" class="form-control" id="" placeholder="Admin Code">
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-
-        </form>
-    
+            </form>
+        </div>
+    </div>
+    <% include ../partials/footer.ejs%>
