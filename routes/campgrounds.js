@@ -18,12 +18,12 @@ var imageFilter = function (req, file, cb) {
 
 var upload = multer({storge:storge,fileFilter:imageFilter})
 
-var cloudinary = require('cloudinary')
-cloudinary.config({
-    cloud_name:'dg6pzjhcw',
-    api_key:'616768382369741',
-    api_secret:'GFscWk-G63Xx2BbGBRAAubGP12k'
-})
+// var cloudinary = require('cloudinary')
+// cloudinary.config({
+//     cloud_name:'dg6pzjhcw',
+//     api_key:'616768382369741',
+//     api_secre
+// })
 
 router.get('/', function (req, res) {
     if (req.query.search) {
@@ -59,7 +59,7 @@ router.get('/', function (req, res) {
     }
 })
 
-router.post('/', middleWare.isLoggedIn,upload.single('campimage'), function (req, res) {
+router.post('/', middleWare.isLoggedIn, function (req, res) {
     var name = req.body.campname
     var image = req.body.campimage
     console.log(req.body.cost + 'Cost submitted')
