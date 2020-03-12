@@ -1,4 +1,5 @@
-var express = require('express')
+require('dotenv').config()
+const express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.use(express.static(__dirname + '/public'))
-mongoose.connect('mongodb://vikram:viki@ds049848.mlab.com:49848/training', function (err) {
+mongoose.connect(process.env.DB_MONOGO, function (err) {
   if (err) {
     console.log(err)
   } else {
@@ -61,7 +62,7 @@ app.use('/campgrounds/:id/comments',commentRoutes)
 
 
 app.listen(5005, function () {
-  console.log('Server running at 3000')
+  console.log('Server running at 5005')
 })
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next()

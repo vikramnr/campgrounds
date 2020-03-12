@@ -24,19 +24,18 @@ var upload = multer({storge:storge,fileFilter:imageFilter})
 //     api_key:'616768382369741',
 //     api_secre
 // })
-
 router.get('/', function (req, res) {
     if (req.query.search) {
         const Regex = new RegExp(escapeRegex(req.query.search), 'gi')
         Camp.find({name: Regex}, function (err, result) {
             if (err || !result) {
                 req.flash('error', 'An error might have occured')
-                res.redirect('/')
+                res.redirect('/home')
                 console.log(err)
             } else {
                 if(result.length<1){
                     req.flash('error','No campgrounds found with your query. Add a new one')
-                    res.redirect('/home')
+                    res.redirect('/')
                 }else{
                     res.render('campgrounds/index', {camps: result,page: 'campgrounds'})
                 }
@@ -45,9 +44,10 @@ router.get('/', function (req, res) {
         })
     } else {
         Camp.find({}, function (err, result) {
+            console.log(result);
             if (err || !result) {
                 req.flash('error', 'An error might have occured')
-                res.redirect('/')
+                res.redirect('/home')
                 console.log(err)
             } else {
                 res.render('campgrounds/index', {
