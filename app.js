@@ -61,7 +61,7 @@ app.use('/campgrounds',campgroundRoutes)
 app.use('/campgrounds/:id/comments',commentRoutes)
 
 
-app.listen(5005, function () {
+app.listen(5005 || process.env.PORT , function () {
   console.log('Server running at 5005')
 })
 function isLoggedIn(req, res, next) {
