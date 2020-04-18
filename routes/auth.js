@@ -9,7 +9,7 @@ var User = require('../models/user')
 //Auth Routes
 //-----------------------------------------//
 router.get('/',function(req,res){
-    res.render('/campgrounds/landing')
+    res.redirect('/')
 })
 router.get('/home',function(req,res){
     res.render('campgrounds/landing')
